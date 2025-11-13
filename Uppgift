@@ -1,0 +1,31 @@
+using System;
+
+public class TriangleArea
+{
+    public static double CalculateArea(double width, double height)
+    {
+        return (width * height) / 2;
+    }
+
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter the width of the triangle: ");
+        if (double.TryParse(Console.ReadLine(), out double width))
+        {
+            Console.Write("Enter the height of the triangle: ");
+            if (double.TryParse(Console.ReadLine(), out double height))
+            {
+                double area = CalculateArea(width, height);
+                Console.WriteLine("The area of the triangle is: " + area);
+            }
+            else
+            {
+                Console.WriteLine("Invalid height entered. Please enter a number.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid width entered. Please enter a number.");
+        }
+    }
+}
